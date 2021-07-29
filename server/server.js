@@ -13,13 +13,14 @@ app.use(cors())
 app.use(bodyParser.json())
 
 
-
 const router = require('./route')
 app.use('/api/', router)
 
+
 app.get('/' , (req , res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
+  res.send(`ok server works on port ${port}`);
 })
+
 
 app.listen(port, () => {
   console.log(`server run on => http://localhost:${port}`)
